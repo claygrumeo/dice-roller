@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'rolls/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -13,4 +14,6 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#destroy'
   get '/logout', to: 'sessions#destroy'
   get '/roller', to: 'roller#index'
+  post '/roll', to: 'roller#roll'
+  get '/rolls', to: 'rolls#index'
 end

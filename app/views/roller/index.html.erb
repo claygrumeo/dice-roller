@@ -1,9 +1,13 @@
 <%= stylesheet_link_tag 'roller' %>
+<%= javascript_import_module_tag "roller" %>
 
 <h1>Dice Roller</h1>
+<p>
+  <a id='view-rolls-link' href='/rolls'>View past rolls</a>
+</p>
 <div>
   <h3>Pick a die:</h3>
-  <%= form_tag('/roll', id: 'roll-form') do %>
+  <%= form_tag('/roll', id: 'roll-form', local: true) do %>
     <%= radio_button_tag(:type, 'D4') %>
       <%= label_tag(:type_D4, 'D4') %>
     <br>
@@ -19,13 +23,15 @@
     <%= radio_button_tag(:type, 'D12') %>
       <%= label_tag(:type_D12, 'D12') %>
     <br>
-    <%= radio_button_tag(:type, 'D20') %>
+    <%= radio_button_tag(:type, 'D20', :checked) %>
       <%= label_tag(:type_D20, 'D20') %>
     <br>
     <%= radio_button_tag(:type, 'D100') %>
       <%= label_tag(:type_D100, 'D100') %>
     <br>
+    <%= submit_tag('Roll') %>
   <% end %>
 
-  <%= button_tag('Roll', id: 'roll-button') %>
+  <p id='roll-result'></p>
+
 </div>
