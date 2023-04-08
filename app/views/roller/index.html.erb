@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag 'roller' %>
+<%= stylesheet_link_tag "roller" %>
 <%= javascript_import_module_tag "roller" %>
 
 <h1>Dice Roller</h1>
@@ -8,30 +8,31 @@
 <div>
   <h3>Pick a die:</h3>
   <%= form_tag('/roll', id: 'roll-form', local: true) do %>
-    <%= radio_button_tag(:type, 'D4') %>
-      <%= label_tag(:type_D4, 'D4') %>
-    <br>
-    <%= radio_button_tag(:type, 'D6') %>
-      <%= label_tag(:type_D6, 'D6') %>
-    <br>
-    <%= radio_button_tag(:type, 'D8') %>
-      <%= label_tag(:type_D8, 'D8') %>
-    <br>
-    <%= radio_button_tag(:type, 'D10') %>
-      <%= label_tag(:type_D10, 'D10') %>
-    <br>
-    <%= radio_button_tag(:type, 'D12') %>
-      <%= label_tag(:type_D12, 'D12') %>
-    <br>
-    <%= radio_button_tag(:type, 'D20', :checked) %>
-      <%= label_tag(:type_D20, 'D20') %>
-    <br>
-    <%= radio_button_tag(:type, 'D100') %>
-      <%= label_tag(:type_D100, 'D100') %>
-    <br>
-    <%= submit_tag('Roll') %>
+    <%# 
+    Loop through possible types of dice and list a radio for each.
+    When the page loads or redirecting to this page, D20 should be the 
+    default selection. Otherwise if you're rolling, the currently selected
+    type should remain when the page updates. 
+    %>
+    <% @die_types.each do |d| %>
+      <%= radio_button_tag(
+        :type,
+        d,
+        (
+          flash[:radio_selection] == d ||
+            (flash[:radio_selection] == nil && d == "D20")
+        )
+      ) %>
+      <%= label_tag("type_#{d}", d) %>
+      <br>
+    <% end %>
+    <%= submit_tag("Roll") %>
   <% end %>
 
-  <p id='roll-result'></p>
+  <%# Show the roll result if there is one to show %>
+  <% if flash[:roll_result] %>
+    <p id='roll-result'>Roll Result:
+      <%= flash[:roll_result] %></p>
+  <% end %>
 
 </div>

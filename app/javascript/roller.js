@@ -16,17 +16,17 @@ const rollResult = document.getElementById("roll-result")
  *******************/
 // This handler will handle the response when the "Roll" button
 // is clicked.  It will add the result of the roll to the DOM.
-rollForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+// rollForm.addEventListener("submit", (event) => {
+//   event.preventDefault();
 
-  const formData = new FormData(event.target);
+//   const formData = new FormData(event.target);
 
-  fetch(event.target.action, {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      rollResult.textContent = `Roll Result: ${data.value}`
-    });
-});
+//   fetch(event.target.action, {
+//     method: "POST",
+//     body: formData,
+//   })
+//     .then((response) => response.json())
+//     .then((data) => {
+//       rollResult.textContent = `Roll Result: ${data.value}`
+//     });
+// });

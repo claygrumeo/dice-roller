@@ -1,8 +1,10 @@
 <div>
   <h2>Create User</h2>
   <%= form_tag '/users' do %>
-    Email: <%= text_field_tag 'user[email]' %><br>
-    Password: <%= password_field_tag 'user[password]' %><br>
+    Email:
+    <%= text_field_tag "user[email]" %><br>
+    Password:
+    <%= password_field_tag "user[password]" %><br>
     <%= submit_tag "Create User" %>
   <% end %>
 </div>
