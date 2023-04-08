@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_08_003723) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_08_122512) do
   create_table "rolls", force: :cascade do |t|
     t.integer "value"
     t.string "die_type"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "info"
     t.index ["user_id"], name: "index_rolls_on_user_id"
   end
 

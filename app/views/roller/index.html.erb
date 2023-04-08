@@ -26,6 +26,9 @@
       <%= label_tag("type_#{d}", d) %>
       <br>
     <% end %>
+    <%= label_tag(:info, "Optional Info:") %><br>
+    <%= text_field_tag(:info) %>
+    <br>
     <%= submit_tag("Roll") %>
   <% end %>
 

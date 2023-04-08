@@ -18,6 +18,7 @@ class RollerController < ApplicationController
     @roll.die_type = params[:type]
     @roll.user = helpers.current_user
     @roll.value = helpers.roll_die(@roll.die_type)
+    @roll.info = params[:info]
     @roll.save
     # Redirect to the same page with new information to show
     redirect_to roller_path, flash: { roll_result: @roll.value, radio_selection: @roll.die_type }
