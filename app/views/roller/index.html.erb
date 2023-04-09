@@ -1,41 +1,62 @@
 <%= stylesheet_link_tag "roller" %>
 <%= javascript_import_module_tag "roller" %>
 
-<h1>Dice Roller</h1>
-<p>
-  <a id='view-rolls-link' href='/rolls'>View past rolls</a>
-</p>
-<div>
-  <h3>Pick a die:</h3>
-  <%= form_tag('/roll', id: 'roll-form', local: true) do %>
-    <%# 
-    Loop through possible types of dice and list a radio for each.
-    When the page loads or redirecting to this page, D20 should be the 
-    default selection. Otherwise if you're rolling, the currently selected
-    type should remain when the page updates. 
-    %>
-    <% @die_types.each do |d| %>
-      <%= radio_button_tag(
-        :type,
-        d,
-        (
-          flash[:radio_selection] == d ||
-            (flash[:radio_selection] == nil && d == "D20")
-        )
-      ) %>
-      <%= label_tag("type_#{d}", d) %>
-      <br>
-    <% end %>
-    <%= label_tag(:info, "Optional Info:") %><br>
-    <%= text_field_tag(:info) %>
-    <br>
-    <%= submit_tag("Roll") %>
-  <% end %>
+<div id="roller-wrapper">
+  <h1>Dice Roller</h1>
 
-  <%# Show the roll result if there is one to show %>
+  <div id="roller-window">
+    <div id="roller-controls">
+      <div id="roller-control-panel">
+        <button id='view-rolls-button'>
+          <a id="view-rolls-link" href='/rolls'>Roll History</a>
+        </button>
+        <%= form_tag("/roll", id: "roll-form", local: true) do %>
+        <%# 
+          Loop through possible types of dice and list a radio for each.
+          When the page loads or redirecting to this page, D20 should be the 
+          default selection. Otherwise if you're rolling, the currently selected
+          type should remain when the page updates. %>
+          <% @die_types.each do |d| %>
+            <%= radio_button_tag(
+              :type,
+              d,
+              (
+                flash[:radio_selection] == d ||
+                  (flash[:radio_selection] == nil && d == "D20")
+              )
+            ) %>
+            <%= label_tag("type_#{d}", d) %>
+            <br>
+          <% end %>
+          <%= label_tag(:info, "Optional Info:") %><br>
+          <%= text_field_tag(:info) %>
+          <br>
+          <%= submit_tag("Roll", id: "roll-button") %>
+        <% end %>
+      </div>
+    </div>
+
+    <%= content_tag(:canvas, "", data: { controller: "threejs" }, id: "three-canvas") %>
+    <div id="three-main"></div>
+  </div>
+</div>
+
+<%# Show the roll result if there is one to show %>
+<div id="roll-result-container">
   <% if flash[:roll_result] %>
-    <p id='roll-result'>Roll Result:
-      <%= flash[:roll_result] %></p>
-  <% end %>
+    <div id="results-background">
+      <div id='roll-result'>Roll Result:
+        <%= flash[:roll_result] %>
+      </div>
+      <% if flash[:info] != "" %>
+        <div id='roll-result-info'>Info:
+          <%= flash[:info] %>
+        </div>
+      <% end %>
+      <div id='roll-result-info'>Type:
+        <%= flash[:radio_selection] %>
+      </div>
+    </div>
 
+  <% end %>
 </div>

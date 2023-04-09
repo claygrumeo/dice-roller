@@ -9,8 +9,7 @@
  * Elements *
  ************/
 const rollForm = document.getElementById("roll-form");
-const rollResult = document.getElementById("roll-result")
-
+const rollResult = document.getElementById("roll-result");
 /*******************
  * Event Listeners *
  *******************/

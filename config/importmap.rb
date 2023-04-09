@@ -6,3 +6,5 @@ pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "roller"
+pin "three", to: "https://ga.jspm.io/npm:three@0.151.3/build/three.module.js"
+# pin "three/trackballcontrols", to: "https://cdn.jsdelivr.net/npm/three-trackballcontrols@0.9.0/index.min.js"

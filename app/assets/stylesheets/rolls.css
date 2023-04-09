@@ -1,5 +1,24 @@
-table, th, td {
-  border: 1px solid black;
+table,
+th,
+td {
+  border: 1px solid rgb(89, 116, 124);
   border-collapse: collapse;
   padding: 5px;
+}
+
+td {
+  padding: 10px;
+}
+
+#rolls-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+#table-wrapper {
+  max-height: 600px;
+  overflow-y: scroll;
+  font-size: 20px;
 }

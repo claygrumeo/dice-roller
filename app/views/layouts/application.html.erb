@@ -10,7 +10,31 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body id="body" data-controller="scenery">
+    <div id="wrapper">
+      <%= image_tag asset_path("transparent_foreground.png"), id: "foreground-close" %>
+      <%= image_tag asset_path("transparent_landscape.png"), id: "foreground-far" %>
+      <%= yield %>
+    </div>
   </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js"></script>
+  <script>
+    VANTA.FOG({
+      el: "#wrapper",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      highlightColor: 0xffffff,
+      midtoneColor: 0x8c5021,
+      lowlightColor: 0x9b2222,
+      baseColor: 0x1e1a41,
+      blurFactor: 0.57,
+      speed: 0.00,
+      zoom: 0.40
+    })
+  </script>
 </html>
