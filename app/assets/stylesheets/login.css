@@ -1,3 +1,72 @@
+h1 {
+  font-size: 50px;
+  color: white;
+}
+
+input {
+  color: black;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+#login-container label, input {
+  font-size: 24px;
+}
+
+#login-container label {
+  margin-bottom: 5px;
+  color: white;
+}
+
+input[type="submit"], #create-account-button {
+  width: 45%;
+  height: 50px;
+  background-color: rgba(91, 167, 56, 0.599);
+  font-size: 18px;
+  display: block;
+  border-radius: 5px;
+  margin: 0 auto;
+  border-style: none;
+  color: white;
+}
+
+input[type="submit"]:hover {
+  background-color: rgba(139, 211, 105, 0.599);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#create-account-button {
+  background-color: rgba(73, 56, 167, 0.599);
+  width: 45%;
+  padding: 0;
+}
+
+#create-account-button a {
+  text-decoration: none;
+  color: white;
+}
+
+#create-account-button:hover {
+  background-color: rgba(119, 103, 206, 0.599);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#button-set {
+  display: flex;
+  align-items: center;
+}
+
 #login-error {
-  color: red;
+  font-size: 18px;
+  color: rgb(255, 0, 0);
+  text-shadow: 1px 1px black;
 }

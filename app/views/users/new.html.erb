@@ -1,9 +1,9 @@
-<div>
-  <h2>Create User</h2>
+<div id="login-container">
+  <h1>Create User</h1>
   <%= form_tag '/users' do %>
-    Email:
+    <%= label_tag("email", "E-mail:") %>
     <%= text_field_tag 'user[email]' %><br>
-    Password:
+    <%= label_tag("password", "Password:") %>
     <%= password_field_tag 'user[password]' %><br>
     <%= submit_tag 'Create User' %>
   <% end %>

@@ -1,11 +1,16 @@
-<div>
-  <h2>Log In</h2>
+<div id="login-container">
+  <h1>Log In</h1>
   <%= form_tag '/login' do %>
-    Email:
+    <%= label_tag("email", "E-mail:") %>
     <%= text_field_tag :email %><br>
-    Password:
+    <%= label_tag("password", "Password:") %>
     <%= password_field_tag :password %><br>
-    <%= submit_tag 'Log In' %>
+    <div id="button-set">
+      <%= submit_tag 'Log In' %>
+      <button id="create-account-button">
+        <a href='/sign-up'>Sign Up</a>
+      </button>
+    </div>
   <% end %>
 
   <br>

@@ -1,3 +1,7 @@
+#dice-title {
+  font-size: 40px;
+}
+
 #roller-window {
   display: flex;
 }
@@ -52,7 +56,7 @@ input[type="radio"]:checked + label {
   resize: none;
 }
 
-#view-rolls-button {
+#view-rolls-button, #logout-button {
   width: 100%;
   height: 50px;
   background-color: rgba(73, 56, 167, 0.599);
@@ -63,12 +67,12 @@ input[type="radio"]:checked + label {
   border-style: none;
 }
 
-#view-rolls-button:hover {
+#view-rolls-button:hover, #logout-button:hover {
   background-color: rgba(81, 93, 192, 0.734);
   transform: scale(1.05);
 }
 
-#view-rolls-button a {
+#view-rolls-button a, #logout-button a {
   text-decoration: none;
   color: white;
   height: 100%;
@@ -120,6 +124,13 @@ input[type="radio"]:checked + label {
 
 #roll-result {
   font-size: 50px;
+}
+
+#logout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 100px;
 }
 
 .roll-result-info {

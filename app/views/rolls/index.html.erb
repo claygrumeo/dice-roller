@@ -6,22 +6,24 @@
     <button id='roll-dice-button'>
       <a id='roll-dice-link' href='/roller'>Roll more dice</a>
     </button>
-  <div id='table-wrapper'>
-    <table id='rolls-table'>
-      <tr>
-        <th>Type</th>
-        <th>Value</th>
-        <th>Time</th>
-        <th>Info</th>
-      </tr>
-      <% @rolls.each do |roll| %>
+  <% if @rolls_count > 0 %>
+    <div id='table-wrapper'>
+      <table id='rolls-table'>
         <tr>
-          <td><%= roll.die_type %></td>
-          <td><%= roll.value %></td>
-          <td><%= roll.created_at.in_time_zone('Eastern Time (US & Canada)').strftime('%m/%d/%Y %l:%M%P %Z') %></td>
-          <td><%= roll.info %></td>
+          <th>Type</th>
+          <th>Value</th>
+          <th>Time</th>
+          <th>Info</th>
         </tr>
-      <% end %>
-    </table>
-  </div>
+        <% @rolls.each do |roll| %>
+          <tr>
+            <td><%= roll.die_type %></td>
+            <td><%= roll.value %></td>
+            <td><%= roll.created_at.in_time_zone('Eastern Time (US & Canada)').strftime('%m/%d/%Y %l:%M%P %Z') %></td>
+            <td><%= roll.info %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <% end %>
 </div>

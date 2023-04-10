@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag "roller" %>
 
 <div id="roller-wrapper" data-controller="roller">
-  <h1>Dice Roller</h1>
+  <h1 id="dice-title">Dice Roller</h1>
 
   <div id="roller-window">
     <div id="roller-controls">
@@ -49,3 +49,7 @@
     <div id="roll-result-info" class='roll-result-info'></div>
   </div>
 </div>
+
+<button id="logout-button">
+  <a href="/logout">Logout</a>
+</button>
