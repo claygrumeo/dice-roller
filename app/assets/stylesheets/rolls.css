@@ -24,3 +24,29 @@ td {
   overflow-y: scroll;
   font-size: 20px;
 }
+
+#roll-dice-button {
+  width: 150px;
+  height: 50px;
+  background-color: rgba(73, 56, 167, 0.599);
+  font-size: 18px;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border-style: none;
+}
+
+#roll-dice-button:hover {
+  background-color: rgba(81, 93, 192, 0.734);
+  transform: scale(1.05);
+}
+
+#roll-dice-button a {
+  text-decoration: none;
+  color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

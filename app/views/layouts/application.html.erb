@@ -2,27 +2,27 @@
 <html>
   <head>
     <title>DiceRoller</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body id="body" data-controller="scenery">
-    <div id="wrapper">
-      <%= image_tag asset_path("transparent_foreground.png"), id: "foreground-close" %>
-      <%= image_tag asset_path("transparent_landscape.png"), id: "foreground-far" %>
+  <body id='body' data-controller='scenery'>
+    <div id='wrapper'>
+      <%= image_tag asset_path('transparent_foreground.png'), id: 'foreground-close' %>
+      <%= image_tag asset_path('transparent_landscape.png'), id: 'foreground-far' %>
       <%= yield %>
     </div>
   </body>
 
-  <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js'></script>
   <script>
     VANTA.FOG({
-      el: "#wrapper",
+      el: '#wrapper',
       mouseControls: true,
       touchControls: true,
       gyroControls: false,

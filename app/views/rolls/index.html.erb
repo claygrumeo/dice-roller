@@ -1,11 +1,11 @@
-<%= stylesheet_link_tag "rolls" %>
+<%= stylesheet_link_tag 'rolls' %>
 
 <div id='rolls-wrapper'>
   <h1>Rolls for
     <%= @user.email %></h1>
-  <p>
-    <a id='roll-dice-link' href='/roller'>Roll more dice</a>
-  </p>
+    <button id='roll-dice-button'>
+      <a id='roll-dice-link' href='/roller'>Roll more dice</a>
+    </button>
   <div id='table-wrapper'>
     <table id='rolls-table'>
       <tr>
@@ -18,7 +18,7 @@
         <tr>
           <td><%= roll.die_type %></td>
           <td><%= roll.value %></td>
-          <td><%= roll.created_at.in_time_zone("EST").strftime("%m/%d/%Y %l:%M%P %Z") %></td>
+          <td><%= roll.created_at.in_time_zone('EST').strftime('%m/%d/%Y %l:%M%P %Z') %></td>
           <td><%= roll.info %></td>
         </tr>
       <% end %>
