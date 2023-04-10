@@ -9,7 +9,7 @@
         <button id='view-rolls-button'>
           <a id="view-rolls-link" href='/rolls'>Roll History</a>
         </button>
-        <%= form_tag("/roll", id: "roll-form", local: true) do %>
+        <%= form_tag("", id: "roll-form") do %>
         <%# 
           Loop through possible types of dice and list a radio for each.
           When the page loads or redirecting to this page, D20 should be the 
@@ -36,6 +36,7 @@
     </div>
 
     <%= content_tag(:canvas, "", data: { controller: "threejs" }, id: "three-canvas") %>
+    <%# Three.js 3D canvas will be attached here%>
     <div id="three-main"></div>
   </div>
 </div>
