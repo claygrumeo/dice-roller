@@ -139,13 +139,14 @@ export default class extends Controller {
     if (this.playRollAnimation) {
       const duration = 1500;
       const elapsedTime = Date.now() - this.currentTime;
+      console.log(elapsedTime)
       // Define the special animation
       function rollAnimation() {
-        this.originShape.rotation.x += 0.2 - elapsedTime / 8000;
-        this.originShape.rotation.y += 0.2 - elapsedTime / 8000;
+        this.originShape.rotation.x += 0.3 - elapsedTime / 5043;
+        this.originShape.rotation.y += 0.3 - elapsedTime / 5043;
         if (this.secondShape != null) {
-          this.secondShape.rotation.x += 0.18 - elapsedTime / 8000;
-          this.secondShape.rotation.y += 0.18 - elapsedTime / 8000;
+          this.secondShape.rotation.x += 0.4 - elapsedTime / 3757;
+          this.secondShape.rotation.y += 0.4 - elapsedTime / 3757;
         }
       }
 
