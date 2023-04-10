@@ -21,8 +21,6 @@ class RollerController < ApplicationController
     @roll.value = helpers.roll_die(@roll.die_type)
     @roll.info = params[:info]
     @roll.save
-    # Redirect to the same page with new information to show
-    # redirect_to roller_path, flash: { roll_result: @roll.value, radio_selection: @roll.die_type, info: @roll.info }
     # Send the response back in JSON format to be processed by the client
     respond_to do |format|
       body = { 'roll_result': @roll.value, 'die_type': @roll.die_type, 'info': @roll.info }
