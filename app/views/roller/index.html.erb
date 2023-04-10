@@ -1,15 +1,15 @@
-<%= stylesheet_link_tag 'roller' %>
+<%= stylesheet_link_tag "roller" %>
 
-<div id='roller-wrapper' data-controller='roller'>
+<div id="roller-wrapper" data-controller="roller">
   <h1>Dice Roller</h1>
 
-  <div id='roller-window'>
-    <div id='roller-controls'>
-      <div id='roller-control-panel'>
+  <div id="roller-window">
+    <div id="roller-controls">
+      <div id="roller-control-panel">
         <button id='view-rolls-button'>
-          <a id='view-rolls-link' href='/rolls'>Roll History</a>
+          <a id="view-rolls-link" href='/rolls'>Roll History</a>
         </button>
-        <%= form_tag('/roll', id: 'roll-form', local: true) do %>
+        <%= form_tag("/roll", id: "roll-form", local: true) do %>
         <%# 
           Loop through possible types of dice and list a radio for each.
           When the page loads or redirecting to this page, D20 should be the 
@@ -21,30 +21,30 @@
               d,
               (
                 flash[:radio_selection] == d ||
-                  (flash[:radio_selection] == nil && d == 'D20')
+                  (flash[:radio_selection] == nil && d == "D20")
               )
             ) %>
-            <%= label_tag('type_#{d}', d) %>
+            <%= label_tag("type_#{d}", d) %>
             <br>
           <% end %>
-          <%= label_tag(:info, 'Optional Info:') %><br>
-          <%= text_area_tag :info, nil, id: 'optional-info' %>
+          <%= label_tag(:info, "Optional Info:") %><br>
+          <%= text_area_tag :info, nil, id: "optional-info" %>
           <br>
-          <%= submit_tag('Roll', id: 'roll-button') %>
+          <%= submit_tag("Roll", id: "roll-button") %>
         <% end %>
       </div>
     </div>
 
-    <%= content_tag(:canvas, '', data: { controller: 'threejs' }, id: 'three-canvas') %>
-    <div id='three-main'></div>
+    <%= content_tag(:canvas, "", data: { controller: "threejs" }, id: "three-canvas") %>
+    <div id="three-main"></div>
   </div>
 </div>
 
 <%# Show the roll result if there is one to show %>
-<div id='roll-result-container'>
-  <div id='results-background'>
+<div id="roll-result-container">
+  <div id="results-background">
     <div id='roll-result'></div>
-    <div id='roll-result-die' class='roll-result-info'></div>
-    <div id='roll-result-info' class='roll-result-info'></div>
+    <div id="roll-result-die" class='roll-result-info'></div>
+    <div id="roll-result-info" class='roll-result-info'></div>
   </div>
 </div>
