@@ -1,13 +1,15 @@
 table,
 th,
 td {
-  border: 1px solid rgb(89, 116, 124);
+  border: 1px solid rgb(99, 124, 89);
   border-collapse: collapse;
   padding: 5px;
+  background-color: rgba(138, 138, 138, 0.117);
 }
 
 td {
   padding: 10px;
+  max-width: 300px;
 }
 
 #rolls-wrapper {

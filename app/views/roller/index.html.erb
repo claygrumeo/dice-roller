@@ -1,7 +1,6 @@
 <%= stylesheet_link_tag "roller" %>
-<%= javascript_import_module_tag "roller" %>
 
-<div id="roller-wrapper">
+<div id="roller-wrapper" data-controller="roller">
   <h1>Dice Roller</h1>
 
   <div id="roller-window">
@@ -29,7 +28,7 @@
             <br>
           <% end %>
           <%= label_tag(:info, "Optional Info:") %><br>
-          <%= text_field_tag(:info) %>
+          <%= text_area_tag :info, nil, id: "optional-info" %>
           <br>
           <%= submit_tag("Roll", id: "roll-button") %>
         <% end %>
@@ -43,20 +42,9 @@
 
 <%# Show the roll result if there is one to show %>
 <div id="roll-result-container">
-  <% if flash[:roll_result] %>
-    <div id="results-background">
-      <div id='roll-result'>Roll Result:
-        <%= flash[:roll_result] %>
-      </div>
-      <% if flash[:info] != "" %>
-        <div id='roll-result-info'>Info:
-          <%= flash[:info] %>
-        </div>
-      <% end %>
-      <div id='roll-result-info'>Type:
-        <%= flash[:radio_selection] %>
-      </div>
-    </div>
-
-  <% end %>
+  <div id="results-background">
+    <div id='roll-result'></div>
+    <div id="roll-result-die" class='roll-result-info'></div>
+    <div id="roll-result-info" class='roll-result-info'></div>
+  </div>
 </div>

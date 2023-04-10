@@ -1,4 +1,5 @@
 class RollerController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   DIE_TYPES = ['D4', 'D6', 'D8', 'D10', 'D12', 'D20', 'D100']
 
@@ -21,6 +22,11 @@ class RollerController < ApplicationController
     @roll.info = params[:info]
     @roll.save
     # Redirect to the same page with new information to show
-    redirect_to roller_path, flash: { roll_result: @roll.value, radio_selection: @roll.die_type, info: @roll.info }
+    # redirect_to roller_path, flash: { roll_result: @roll.value, radio_selection: @roll.die_type, info: @roll.info }
+    # Send the response back in JSON format to be processed by the client
+    respond_to do |format|
+      body = { 'roll_result': @roll.value, 'die_type': @roll.die_type, 'info': @roll.info }
+      format.html { render :json => body }
+    end
   end
 end
