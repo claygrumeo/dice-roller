@@ -36,7 +36,6 @@ export default class extends Controller {
 
       // Create form data out of the form so the backend can process the request
       const formData = new FormData(rollForm);
-      console.log("FORM DATA", formData);
       // Reset option info field now that form data is created
       optionalInfo.value = "";
 

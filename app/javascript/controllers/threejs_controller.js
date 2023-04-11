@@ -127,6 +127,8 @@ export default class extends Controller {
       this.currentTime = Date.now();
     });
 
+    this.renderer.compile(this.scene, this.camera)
+
     // Start the animation loop
     this.animate();
   }
