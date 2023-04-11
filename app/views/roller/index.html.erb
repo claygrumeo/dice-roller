@@ -25,11 +25,9 @@
               )
             ) %>
             <%= label_tag("type_#{d}", d) %>
-            <br>
           <% end %>
-          <%= label_tag(:info, "Optional Info:") %><br>
+          <%= label_tag(:info, "Optional Info:") %>
           <%= text_area_tag :info, nil, id: "optional-info" %>
-          <br>
           <%= submit_tag("Roll", id: "roll-button") %>
         <% end %>
       </div>

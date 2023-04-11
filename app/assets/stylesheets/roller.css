@@ -19,7 +19,13 @@
   flex-direction: column;
 }
 
+#roll-form {
+  display: flex;
+  flex-direction: column;
+}
+
 #roller-control-panel {
+  width: 200px;
   height: 90%;
   border: 3px solid white;
   border-radius: 10px;
@@ -31,11 +37,13 @@ input[type="radio"] {
 }
 
 input[type="radio"] + label {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(152, 89, 50, 0.466);
   color: white;
   cursor: pointer;
-  margin: 5px 0 5px 0;
+  margin: 7px 0 6px 0;
   border-radius: 5px;
   height: 25px;
   width: 100%;
