@@ -109,6 +109,7 @@ input[type="radio"]:checked + label {
 }
 
 #roll-result-container {
+  margin-top: 25px;
   width: 100%;
   display: none;
   justify-content: center;
