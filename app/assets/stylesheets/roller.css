@@ -26,7 +26,7 @@
 
 #roller-control-panel {
   width: 200px;
-  height: 90%;
+  height: 100%;
   border: 3px solid white;
   border-radius: 10px;
   padding: 10px;
@@ -91,7 +91,7 @@ input[type="radio"]:checked + label {
 }
 
 #roll-button {
-  margin-top: 8px;
+  margin-top: 12px;
   color: white;
   width: 100%;
   height: 50px;
@@ -99,7 +99,6 @@ input[type="radio"]:checked + label {
   font-size: 18px;
   display: block;
   border-radius: 5px;
-  margin-bottom: 10px;
   border-style: none;
   cursor: pointer;
 }
