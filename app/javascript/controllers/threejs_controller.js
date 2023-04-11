@@ -139,7 +139,6 @@ export default class extends Controller {
     if (this.playRollAnimation) {
       const duration = 1500;
       const elapsedTime = Date.now() - this.currentTime;
-      console.log(elapsedTime)
       // Define the special animation
       function rollAnimation() {
         this.originShape.rotation.x += 0.3 - elapsedTime / 5043;
